@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'TaistyTech'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4F978D6467AB4FA88416E2E9A47FB3E9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AECB292A32AE42E0A015BA01142A5F83 }}
