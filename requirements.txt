@@ -1,0 +1,133 @@
+aiohttp==3.8.4
+aiosignal==1.3.1
+argon2-cffi==20.1.0
+astroid @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-astroid/work/astroid-2.15.0/dist/astroid-2.15.0-py3-none-any.whl
+asttokens==2.2.1
+async-timeout==4.0.2
+attrs==21.4.0
+Babel==2.9.1
+backcall==0.2.0
+beautifulsoup4==4.11.2
+bleach==3.3.1
+blinker==1.6.2
+build==0.10.0
+certifi==2022.12.7
+cffi==1.15.1
+chardet @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/converters/py-chardet/work/chardet-5.1.0/dist/chardet-5.1.0-py3-none-any.whl
+charset-normalizer==2.0.12
+click==8.1.7
+colorama @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/comms/py-colorama/work/colorama-0.4.6-py2.py3-none-any.whl
+contourpy==1.0.7
+cpplint==1.6.1
+cryptography==39.0.2
+cycler==0.11.0
+Cython==0.29.33
+debugpy==1.5.1
+decorator==4.4.2
+defusedxml==0.7.1
+dill==0.3.6
+doctestfn==1.0.3
+editables==0.3
+entrypoints @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-entrypoints/work/entrypoints-0.4/dist/entrypoints-0.4-py3-none-any.whl
+executing==1.2.0
+fastjsonschema==2.16.3
+Flask==2.3.2
+flit_core @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-flit_core/work/flit_core-3.8.0/dist/flit_core-3.8.0-py3-none-any.whl
+fonttools==4.39.4
+frozenlist==1.3.3
+hatch-fancy-pypi-readme @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-hatch-fancy-pypi-readme/work/hatch_fancy_pypi_readme-22.8.0/dist/hatch_fancy_pypi_readme-22.8.0-py3-none-any.whl
+hatch-nodejs-version @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-hatch-nodejs-version/work/hatch_nodejs_version-0.3.1/dist/hatch_nodejs_version-0.3.1-py3-none-any.whl
+hatch-vcs @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-hatch-vcs/work/hatch_vcs-0.3.0/dist/hatch_vcs-0.3.0-py3-none-any.whl
+hatchling @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-hatchling/work/hatchling-1.13.0/dist/hatchling-1.13.0-py3-none-any.whl
+idna==2.10
+iniconfig==1.1.1
+ipykernel @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-ipykernel/work/ipykernel-6.17.1/dist/ipykernel-6.17.1-py3-none-any.whl
+ipython==8.11.0
+ipython-genutils==0.2.0
+isort==5.12.0
+itsdangerous==2.1.2
+jedi==0.18.2
+Jinja2==3.1.2
+jsonschema @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/textproc/py-jsonschema/work/jsonschema-4.17.3/dist/jsonschema-4.17.3-py3-none-any.whl
+jupyter_client @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-jupyter_client/work/jupyter_client-7.4.8/dist/jupyter_client-7.4.8-py3-none-any.whl
+jupyter_core @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-jupyter_core/work/jupyter_core-5.3.0/dist/jupyter_core-5.3.0-py3-none-any.whl
+jupyterlab-pygments==0.1.2
+kiwisolver==1.4.4
+lazy-object-proxy==1.9.0
+lxml==4.9.2
+Markdown==3.4.1
+MarkupSafe==2.1.2
+matplotlib==3.7.1
+matplotlib-inline==0.1.6
+mccabe==0.7.0
+meson==1.0.1
+mistune==0.8.4
+multidict==6.0.4
+mypy==1.1.1
+mypy-extensions==1.0.0
+mysql-connector-python==8.2.0
+nbclient==0.6.6
+nbconvert==6.5.0
+nbformat @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/www/py-nbformat/work/nbformat-5.7.3/dist/nbformat-5.7.3-py3-none-any.whl
+nest-asyncio==1.5.6
+notebook==6.4.11
+numpy==1.24.3
+olefile==0.46
+packaging==23.0
+pandocfilters==1.5.0
+parso==0.8.3
+pathspec==0.11.1
+pep517 @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-pep517/work/pep517-0.13.0-py3-none-any.whl
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==9.4.0
+platformdirs @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/misc/py-platformdirs/work/platformdirs-3.1.1/dist/platformdirs-3.1.1-py3-none-any.whl
+pluggy==1.0.0
+prometheus-client==0.16.0
+prompt-toolkit==3.0.38
+protobuf==4.21.12
+psutil==5.9.4
+ptyprocess==0.7.0
+pure-eval==0.2.2
+pybind11==2.10.4
+pycairo==1.23.0
+pycparser==2.21
+pycurl==7.45.2
+Pygments==2.14.0
+pylint @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-pylint/work/pylint-2.17.0/dist/pylint-2.17.0-py3-none-any.whl
+pyparsing==3.0.8
+pyproject-hooks==1.0.0
+pyrsistent==0.19.3
+PySocks==1.7.1
+pytest==7.2.2
+pytest-runner==5.2
+python-dateutil==2.8.2
+pytz==2022.7.1
+PyYAML==5.4.1
+pyzmq==24.0.1
+requests==2.26.0
+semantic-version==2.10.0
+Send2Trash==1.8.0
+setuptools-rust==1.5.2
+setuptools-scm==7.1.0
+shtab==1.6.4
+six==1.16.0
+soupsieve @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/www/py-soupsieve/work/soupsieve-2.3.2.post1/dist/soupsieve-2.3.2.post1-py3-none-any.whl
+stack-data==0.6.2
+termcolor==1.1.0
+terminado==0.10.1
+tinycss2 @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/textproc/py-tinycss2/work/tinycss2-1.1.1/dist/tinycss2-1.1.1-py3-none-any.whl
+tldr==3.2.0
+toml==0.10.2
+tomlkit==0.11.6
+tornado==6.2
+tqdm==4.65.0
+traitlets @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-traitlets/work/traitlets-5.9.0/dist/traitlets-5.9.0-py3-none-any.whl
+typing_extensions @ file:///escnfs/home/pbui/pub/src/pkgsrc-2022Q4/devel/py-typing-extensions/work/typing_extensions-4.5.0-py3-none-any.whl
+urllib3==1.26.15
+wcwidth==0.2.6
+webencodings==0.5.1
+Werkzeug==2.3.4
+wrapt==1.15.0
+yarl==1.8.2
+yaspin==2.1.0
