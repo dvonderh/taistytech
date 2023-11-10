@@ -74,7 +74,6 @@ psutil==5.9.4
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pybind11==2.10.4
-pycairo==1.23.0
 pycparser==2.21
 Pygments==2.14.0
 pyparsing==3.0.8
