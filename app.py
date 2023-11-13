@@ -3,8 +3,8 @@ from flask import Flask, render_template, redirect, url_for, session
 from flask_oidc import OpenIDConnect
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dvonderh'
-app.config['OIDC_CLIENT_SECRETS'] = 'client_secrets.json'  # Create this file with your Azure AD app info
+app.config['SECRET_KEY'] = '24279c4e-91ef-4cd2-ab39-fc0112a1327c'
+app.config['OIDC_CLIENT_SECRETS'] = 'client_secrets.json'  
 app.config['OIDC_ID_TOKEN_COOKIE_SECURE'] = False
 app.config['OIDC_REQUIRE_VERIFIED_EMAIL'] = False
 oidc = OpenIDConnect(app)
