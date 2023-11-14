@@ -80,10 +80,22 @@
 
     <script>
         function addIngr() {
-            // You can add JavaScript here to handle the form submission and interact with your AI system.
-            // For now, let's just display a sample result.
-            const recipeResults = document.getElementById('recipeResults');
-            recipeResults.innerHTML = '<h3>Sample Recipe</h3><p>Tomato Pasta with Onion Sauce</p>';
+			const ingredientInput = document.getElementByID('ingredients');
+			const ingredient = { "ingredent": ingredientInput.value};
+			fetch('/update-database', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(ingredient),
+        	})
+        	.then(response => response.json())
+			.then(data => {
+				console.log(data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
         }
     </script>
 
