@@ -30,7 +30,7 @@ def update_database():
         cursor = conn.cursor()
 
         # Execute a SQL query to update the database
-        cursor.execute(f"INSERT INTO Ingredients (Name) VALUES ('{ingredient}')")
+        cursor.execute(f"INSERT INTO Ingredient (name, quantity) VALUES ('{ingredient}', 1)")
         conn.commit()
 
         # Close the database connection
