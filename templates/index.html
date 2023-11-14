@@ -79,6 +79,21 @@
         </div>
     </section>
 
+
+	<section>
+        <h2>Add an ingredient!</h2>
+        <form id="recipeForm">
+            <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
+            <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
+
+            <button type="button" onclick="getRecipes()">Get Recipes</button>
+        </form>
+
+        <div id="recipeResults">
+            <!-- Results will be displayed here -->
+        </div>
+	</section>
+
     <script>
         function getRecipes() {
             // You can add JavaScript here to handle the form submission and interact with your AI system.
