@@ -64,37 +64,22 @@
         <h1>TaistyTech</h1>
         <p>Your AI Kitchen Assistant</p>
     </header>
-<!--
-    <section>
-        <h2>Find Recipes with What You Have</h2>
-        <form id="recipeForm">
-            <label for="ingredients">Enter the ingredients you have:</label>
-            <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
-
-            <button type="button" onclick="getRecipes()">Get Recipes</button>
-        </form>
-
-        <div id="recipeResults">
-        </div>
-    </section>
--->
-
 	<section>
         <h2>Add an ingredient!</h2>
         <form id="recipeForm">
             <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
             <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
 
-            <button type="button" onclick="getRecipes()">Get Recipes</button>
+            <button type="button" onclick="addIngr()">Add Ingredient</button>
         </form>
 
-        <div id="recipeResults">
-            <!-- Results will be displayed here -->
+        <div id="Added">
+            <!-- Ingredient Added -->
         </div>
 	</section>
 
     <script>
-        function getRecipes() {
+        function addIngr() {
             // You can add JavaScript here to handle the form submission and interact with your AI system.
             // For now, let's just display a sample result.
             const recipeResults = document.getElementById('recipeResults');
