@@ -10,7 +10,7 @@ username = 'dvonderh'
 password = '0527Butterfly!'
 driver = '{ODBC Driver 17 for SQL Server}'
 
-@app.route("/")
+@app.route("/templates")
 def index():
     return render_template("index.html")
 
