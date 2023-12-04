@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaistyTech - Your AI Kitchen Assistant</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5em;
+        }
+
+        input {
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        button {
+            padding: 0.7em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TaistyTech</h1>
+        <p>Your AI Kitchen Assistant</p>
+    </header>
+	<section>
+        <h2>Add an ingredient!</h2>
+        <form id="recipeForm">
+            <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
+            <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
+
+            <button type="button" onclick="addIngr()">Add Ingredient</button>
+        </form>
+
+        <div id="Added">
+            <!-- Ingredient Added -->
+        </div>
+	</section>
+
+    <script>
+        function addIngr() {
+			const ingredientInput = document.getElementByID('ingredients');
+			const ingredient = { "ingredent": ingredientInput.value};
+			fetch('/update-database', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(ingredient),
+        	})
+        	.then(response => response.json())
+			.then(data => {
+				console.log(data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+        }
+    </script>
+
+</body>
+
+</html>
+

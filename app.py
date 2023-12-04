@@ -4,23 +4,21 @@ import pyodbc
 
 app = Flask(__name__)
 
-'''
 server = 'taistytech.database.windows.net'
 database = 'TaistyTech'
 username = 'dvonderh'
 password = '0527Butterfly!'
 driver = '{ODBC Driver 17 for SQL Server}'
-'''
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
-'''
 @app.route("/login/")
 def login():
     return render_template("login.html")
 
+'''
 # Database update route
 @app.route("/update-database", methods=['POST'])
 def update_database():
