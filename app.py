@@ -12,7 +12,7 @@ driver = '{ODBC Driver 17 for SQL Server}'
 
 @app.route("/")
 def index():
-    return render_template("/templates/index.html")
+    return render_template("index.html")
 
 @app.route("/login/")
 def login():
