@@ -11,7 +11,7 @@ password = '0527Butterfly!'
 driver = '{ODBC Driver 17 for SQL Server}'
 
 @app.route("/")
-def index():
+def home():
     return render_template("index.html")
 
 @app.route("/login/")
