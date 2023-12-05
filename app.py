@@ -3,11 +3,11 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/", methods=['POST'])
+@app.route("/", methods=["GET", "POST"]))
 def home():
-    if requests.method == 'POST':
-        ingredient = request.form['ingredient']
-        
+    if request.method == "POST":
+        ingredient = request.form.get("ingredient")
+    
     return render_template("index.html")
 
 
