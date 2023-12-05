@@ -57,30 +57,6 @@
         }
     </style>
 
-	<script>
-        function addIngr() {
-            var ingredient = document.getElementById('ingredients').value;
-
-            if (ingredient.trim() === "") {
-                alert("Please enter a valid ingredient");
-                return;
-            }
-
-            // Make an asynchronous request to add the ingredient
-            $.ajax({
-                type: 'POST',
-                url: '/add_ingredient',
-                data: { ingredient: ingredient },
-                success: function (response) {
-                    alert(response.message);
-                    document.getElementById('Added').innerHTML = 'Ingredient Added: ' + ingredient;
-                },
-                error: function (error) {
-                    alert('Failed to add ingredient');
-                }
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -91,15 +67,6 @@
     </header>
 	<section>
         <h2>Add an ingredient!</h2>
-        <form id="recipeForm">
-            <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
-            <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
-            <button type="button" onclick="addIngr()">Add Ingredient</button> 
-        </form>
-
-        <div id="Added">
-            <!-- Ingredient Added -->
-        </div>
 	</section>
 
 </body>
