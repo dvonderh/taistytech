@@ -19,7 +19,7 @@ def insert_ingredient(ingredient):
     try:
         connection = mysql.connector.connect(**db_config)
         cursor = connection.cursor()
-        query = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s)"
+        query = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s, %s, %s)"
         cursor.execute(query, ('dvonderh', ingredient, True))
         connection.commit()
         return True
