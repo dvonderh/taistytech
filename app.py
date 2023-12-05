@@ -1,6 +1,6 @@
-# apf.py
-from flask import Flask, render_template, request
-import mysql.connector
+# app.py
+from flask import Flask, render_template, request, jsonify
+import mysql.connectori
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -33,7 +33,7 @@ def insert_ingredient(ingredient):
 
 @app.route("/add_ingredient", methods=['POST'])
 def add_ingredient():
-    if request.method = 'POST':
+    if request.method == 'POST':
         ingredient = request.form['ingredients']
         if ingredient:
             success = insert_ingredient(ingredient)
