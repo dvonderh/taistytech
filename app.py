@@ -1,15 +1,18 @@
 # app.py
 from flask import Flask, render_template, request
 import mysql.connector
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-db_config = {
-    'host': 'db8.cse.nd.edu',
-    'user': 'dvonderh',
-    'password': 'goirish',
-    'database': 'dvonderh',
-}
+app.secret_key='dvonderh'
+app.config['MYSQL_HOST'] = 'db8.cse.nd.edu'
+app.config['MYSQL_USER'] = 'dvonderh'
+app.config['MYSQL_PASSWORD'] = 'goirish'
+app.config['MYSQL_DB'] = 'dvonderh'
+
+mysql = MYSQL(app)
+
 
 @app.route("/")
 def home():
@@ -17,11 +20,10 @@ def home():
 
 def insert_ingredient(ingredient):
     try:
-        connection = mysql.connector.connect(**db_config)
-        cursor = connection.cursor()
-        query = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s, %s, %s)"
+        cursor = mysql.connection.cursor()
+        qquery = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s, %s, %s)"
         cursor.execute(query, ('dvonderh', ingredient, True))
-        connection.commit()
+        mysql.connection.commit()
         return True
     except Exception as e:
         print(f"Error: {e}")
@@ -32,15 +34,16 @@ def insert_ingredient(ingredient):
 
 @app.route("/add_ingredient", methods=['POST'])
 def add_ingredient():
-    ingredient = request.form.get('ingredients')
-    if ingredient:
-        success = insert_ingredient(ingredient)
-        if success:
-            return jsonify({'message': 'Ingredient added successfully'})
+    if request.method = 'POST':
+        ingredient = request.form['ingredients']
+        if ingredient:
+            success = insert_ingredient(ingredient)
+            if success:
+                return jsonify({'message': 'Ingredient added successfully'})
+            else:
+                return jsonify({'error': 'Failed to add ingredient'})
         else:
-            return jsonify({'error': 'Failed to add ingredient'})
-    else:
-        return jsonify({'error': 'Invalid ingredient'})
+            return jsonify({'error': 'Invalid ingredient'})
 
 
 if __name__ == "__main__":
