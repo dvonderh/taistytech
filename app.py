@@ -5,7 +5,7 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 app.secret_key='dvonderh'
-app.config['MYSQL_HOST'] = 'db8.cse.nd.edu'
+app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'dvonderh'
 app.config['MYSQL_PASSWORD'] = 'goirish'
 app.config['MYSQL_DB'] = 'dvonderh'
@@ -19,7 +19,7 @@ def home():
         cursor = mysql.connection.cursor()
         query = 'insert into ingredients (user, ingredient, availability) values (%s, %s, %s)'
         cursor.execute(query, ('dvonderh', ingredient, True))
-        mysql.connectoin.commit()
+        mysql.connection.commit()
         cursor.close()
         
     
