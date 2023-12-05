@@ -33,8 +33,11 @@ def insert_ingredient(ingredient):
     finally:
         cursor.close()
 
+'''
 @app.route("/add_ingredient", methods=['POST'])
 def add_ingredient():
+    pass
+'''
     if request.method == 'POST':
         ingredient = request.form['ingredients']
         if ingredient:
