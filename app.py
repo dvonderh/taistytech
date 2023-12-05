@@ -8,7 +8,6 @@ app = Flask(__name__)
 def home():
     if request.method == "POST":
         ingredient = request.form["ingredient"]
-        return ingredient
  
     return render_template("index.html")
 
