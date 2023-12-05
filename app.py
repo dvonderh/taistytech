@@ -32,7 +32,7 @@ def insert_ingredient(ingredient):
 
 @app.route("/add_ingredient", methods=['POST'])
 def add_ingredient():
-    ingredient = request.form.get('ingredient')
+    ingredient = request.form.get('ingredients')
     if ingredient:
         success = insert_ingredient(ingredient)
         if success:
