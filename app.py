@@ -5,6 +5,7 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
+'''
 app.secret_key='dvonderh'
 app.config['MYSQL_HOST'] = 'db8.cse.nd.edu'
 app.config['MYSQL_USER'] = 'dvonderh'
@@ -13,10 +14,12 @@ app.config['MYSQL_DB'] = 'dvonderh'
 
 mysql = MYSQL(app)
 
+'''
 @app.route("/")
 def home():
     return render_template("index.html")
 
+'''
 def insert_ingredient(ingredient):
     try:
         cursor = mysql.connection.cursor()
@@ -43,6 +46,7 @@ def add_ingredient():
         else:
             return jsonify({'error': 'Invalid ingredient'})
 
+'''
 
 if __name__ == "__main__":
     app.run(debug=True)
