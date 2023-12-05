@@ -70,34 +70,12 @@
             <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
             <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
 
-            <button type="button" onclick="addIngr()">Add Ingredient</button>
         </form>
 
         <div id="Added">
             <!-- Ingredient Added -->
         </div>
 	</section>
-
-    <script>
-        function addIngr() {
-			const ingredientInput = document.getElementByID('ingredients');
-			const ingredient = { "ingredent": ingredientInput.value};
-			fetch('/update-database', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(ingredient),
-        	})
-        	.then(response => response.json())
-			.then(data => {
-				console.log(data);
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
-        }
-    </script>
 
 </body>
 
