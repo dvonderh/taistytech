@@ -29,7 +29,6 @@ def insert_ingredient(ingredient):
         return False
     finally:
         cursor.close()
-        connection.close()
 
 @app.route("/add_ingredient", methods=['POST'])
 def add_ingredient():
