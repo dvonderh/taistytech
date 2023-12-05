@@ -7,20 +7,9 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        mydb = mysql.conector.connect(
-            host = "localhost",
-            user = "dvonderh",
-            password = "goirish",
-            database = "dvonderh"
-        )
-
         ingredient = request.form["ingredient"]
-        mycursor = mydb.cursor()
-        query = 'insert into ingredients (user, ingredient, availability) values (%s, %s, %s)'
-        mycursor.execute(query, ('dvonderh', ingredient, True))
-        mydb.commit()
-        mydb.close() 
-    
+        return ingredient
+ 
     return render_template("index.html")
 
 
