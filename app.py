@@ -13,7 +13,6 @@ app.config['MYSQL_DB'] = 'dvonderh'
 
 mysql = MYSQL(app)
 
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -21,7 +20,7 @@ def home():
 def insert_ingredient(ingredient):
     try:
         cursor = mysql.connection.cursor()
-        qquery = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s, %s, %s)"
+        query = "INSERT INTO ingredients (user, ingredient, availability) VALUES (%s, %s, %s)"
         cursor.execute(query, ('dvonderh', ingredient, True))
         mysql.connection.commit()
         return True
