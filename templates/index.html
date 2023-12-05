@@ -56,6 +56,31 @@
             background-color: #555;
         }
     </style>
+
+	<script>
+        function addIngr() {
+            var ingredient = document.getElementById('ingredients').value;
+
+            if (ingredient.trim() === "") {
+                alert("Please enter a valid ingredient");
+                return;
+            }
+
+            // Make an asynchronous request to add the ingredient
+            $.ajax({
+                type: 'POST',
+                url: '/add_ingredient',
+                data: { ingredient: ingredient },
+                success: function (response) {
+                    alert(response.message);
+                    document.getElementById('Added').innerHTML = 'Ingredient Added: ' + ingredient;
+                },
+                error: function (error) {
+                    alert('Failed to add ingredient');
+                }
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -69,7 +94,6 @@
         <form id="recipeForm">
             <label for="ingredients">Enter ingredient to add it to your kitchen:</label>
             <input type="text" id="ingredients" name="ingredients" placeholder="E.g., tomatoes, onions, pasta">
-
             <button type="button" onclick="addIngr()">Add Ingredient</button> 
         </form>
 
@@ -78,26 +102,6 @@
         </div>
 	</section>
 
-    <script>
-        function addIngr() {
-			const ingredientInput = document.getElementByID('ingredients');
-			const ingredient = { "ingredent": ingredientInput.value};
-			fetch('/update-database', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(ingredient),
-        	})
-        	.then(response => response.json())
-			.then(data => {
-				console.log(data);
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
-        }
-    </script>
 </body>
 
 </html>
