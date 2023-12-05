@@ -10,7 +10,8 @@ ingredients = []
 def home():
     if request.method == "POST":
         ingredient = request.form["ingredient"]
-        ingredients.append(ingredient)
+        if ingredient not in ingredients:
+            ingredients.append(ingredient)
  
     return render_template("index.html", ingredient_list=ingredients)
 
