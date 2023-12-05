@@ -74,11 +74,36 @@
 		</form>
 
 		<h3>Ingredient List:</h3>
-        <ul>
-            {% for ingredient in ingredient_list %}
-                <li>{{ ingredient }}</li>
-            {% endfor %}
-        </ul>
+			<ul id="ingredientList">
+				<!-- Ingredients will be dynamically added here -->
+			</ul>
+
+			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+			<script>
+				// Function to fetch and update the ingredient list
+				function updateIngredientList() {
+					$.ajax({
+						url: '/get_ingredients',  // Replace with your actual endpoint
+						type: 'GET',
+						success: function (data) {
+							// Clear existing list
+							$('#ingredientList').empty();
+
+							// Append each ingredient to the list
+							data.ingredients.forEach(function (ingredient) {
+								$('#ingredientList').append('<li>' + ingredient + '</li>');
+							});
+						},
+						error: function (error) {
+							console.log('Failed to fetch ingredient list');
+						}
+					});
+				}
+
+				// Initial update on page load
+				updateIngredientList();
+
+			</script>
 
 	</section>
 
