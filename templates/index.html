@@ -111,6 +111,23 @@
       				findRecipes();
    				});
 
+				function findRecipes() {
+					// Make an asynchronous request to the '/my-link' endpoint
+					$.ajax({
+						type: 'POST',
+						url: '/my-link',
+						success: function (data) {
+							$('#recipeList').empty();
+							data.recipes.forEach(function (recipe) {
+								$('#recipeList').append('<li><a href="' + recipe.url + '">' + recipe.label + '</a></li>');
+							});
+						},
+						error: function (error) {
+							console.log('Failed to fetch recipe list');
+						}
+					});
+				}
+
 			</script>
 
 	</section>
