@@ -20,14 +20,6 @@ def home():
 def get_ingredients():
     return jsonify({'ingredients': ingredients})
 
-@app.route("/get_recipies", methods=["GET", "POST"])
-def get_recipes():
-    if request.method == "POST":
-        recipes = request.form.get("recipe")
-        for i in ingredients:
-            recipes = search_recipes(i)
-    
-
 if __name__ == "__main__":
     app.run(debug=True)
 

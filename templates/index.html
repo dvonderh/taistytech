@@ -71,8 +71,6 @@
 		<form action="/" method="POST">
 			Enter an ingredient to add it to your kitchen: <input type="text" name="ingredient">
 			<input type="submit" value="Submit">
-			<button type="button" onclick="get_recipes()">Get Possible Recipes</button>
-
 		</form>
 
 
@@ -125,22 +123,6 @@
         		});
 
 
-
-				function get_recipes() {
-            		var ingredients = '{{ recipes | map(attribute="recipe.ingredients") | join(",") }}';
-            
-            		$.ajax({
-                		type: 'POST',
-                		url: '/get_recipes',
-                		data: { ingredients: ingredients },
-                		success: function (response) {
-                    		alert(response.message);  // You can replace this with any logic to display the recipes.
-                		},
-                		error: function (error) {
-                    		alert('Failed to fetch possible recipes');
-                		}	
-            		});
-        		}
 			</script>
 
 	</section>
