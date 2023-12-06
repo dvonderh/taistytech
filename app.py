@@ -24,8 +24,7 @@ def get_ingredients():
 @app.route('/my-link', methods=["POST"])
 def findRecipes():
     for i in ingredients:
-        #recipe = search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient)
-        pass
+        recipe = search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient)
     return jsonify({'message': 'recipes found'})
 if __name__ == "__main__":
     app.run(debug=True)
