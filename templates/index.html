@@ -102,6 +102,22 @@
             });
         }
 		updateIngredientList();
+		$('#ingredientForm').submit(function (event) {
+        	event.preventDefault(); // Prevent default form submission
+			$.ajax({
+				type: 'POST',
+				url: '/',
+				data: $('#ingredientForm').serialize(),
+				success: function (response) {
+					console.log(response.message);
+					// Update the ingredient list after successful submission
+					updateIngredientList();
+				},
+				error: function (error) {
+					console.log('Failed to add ingredient');
+				}
+			});
+        });
 	</script>
 
 </body>
