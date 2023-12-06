@@ -8,8 +8,9 @@ ingredients = []
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    if request.method == "POST":
-        ingredient = request.form["ingredient"]
+    pass
+    #if request.method == "POST":
+        #ingredient = request.form["ingredient"]
         #if ingredient not in ingredients and ingredient != '':
             #ingredients.append(ingredient)
  
