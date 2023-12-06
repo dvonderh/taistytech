@@ -10,7 +10,7 @@ ingredients = []
 def home():
     if request.method == "POST":
         ingredient = request.form["ingredient"]
-        if ingredient not in ingredients:
+        if ingredient not in ingredients and ingredient != '':
             ingredients.append(ingredient)
  
     return render_template("index.html", ingredient_list=ingredients)
@@ -21,11 +21,12 @@ def get_ingredients():
     if ingredients != []:
         return jsonify({'ingredients': ingredients})
 
-@app.route('/my-link', methods=["GET"])
+@app.route('/my-link', methods=["POST"])
 def my_link():
     for i in ingredients:
         #recipe = search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient)
         pass
+    return jsonify({'message': 'recipes found'})
 if __name__ == "__main__":
     app.run(debug=True)
 
