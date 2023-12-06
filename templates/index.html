@@ -117,13 +117,11 @@
 	</script>
 	</section>
 	<section>
-    	<form id="findrecipes" action="/find_recipes" method="POST">
-    		<input type="submit" value="Find Recipes!">
+		<form id="findrecipes">
+    		<input type="submit" onclick="findRecipes()" value="Find Recipes!">
     	</form>
 		<h3>Recipe List:</h3>
-    		<ul id="recipeList">
-			</ul>
-
+    		<ul id="recipeList"></ul>
 	</section>
 </body>
 </html>

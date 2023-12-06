@@ -21,12 +21,11 @@ def get_ingredients():
     if ingredients != []:
         return jsonify({'ingredients': ingredients})
 
-@app.route("/find_recipes", methods=["POST"])
+@app.route("/find_recipes", methods=["GET"])
 def find_recipes():
     # Call the search_recipes function with the current ingredients
     recipes = search_recipes(ingredients)
-    return render_template("index.html", ingredient_list=ingredients, recipes=recipes)
-
+    return jsonify({'recipes': recipes})
 
 if __name__ == '__main__':
     app.run(debug=True)
