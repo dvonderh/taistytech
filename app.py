@@ -25,7 +25,8 @@ def get_ingredients():
 def find_recipes():
     # Call the search_recipes function with the current ingredients
     recipes = search_recipes(ingredients)
-    return jsonify({'recipes': recipes})
+    return render_template("index.html", ingredient_list=ingredients, recipes=recipes)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
