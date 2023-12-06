@@ -73,18 +73,15 @@
 			<input type="submit" value="Submit">
 		</form>
 
-<!--
 		<form id="findrecipes">
             <input type="submit" onclick="findRecipes()" value="Find Recipes!">
         </form>
--->
 
 		<h3>Ingredient List:</h3>
 			<ul id="ingredientList">
 				<!-- Ingredients will be dynamically added here -->
 			</ul>
 
-<!--
 
 			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 			<script>
@@ -109,21 +106,49 @@
 				}
 
 				updateIngredientList();
-
-				$('#findrecipes').submit(function (event) {
-      				event.preventDefault();
-      				findRecipes();
-   				});
+				$('#ingredientForm').submit(function (event) {
+            		event.preventDefault(); // Prevent default form submission
+				$.ajax({
+                		type: 'POST',
+                		url: '/',
+                		data: $('#ingredientForm').serialize(),
+                		success: function (response) {
+                    		console.log(response.message);
+                    // Update the ingredient list after successful submission
+                    		updateIngredientList();
+                		},
+                		error: function (error) {
+                    		console.log('Failed to add ingredient');
+                		}
+            		});
+        		});
 
 				function findRecipes() {
-					// Make an asynchronous request to the '/my-link' endpoint
+        		// Make an asynchronous request to the '/my-link' endpoint
+        			$.ajax({
+            			type: 'POST',
+            			url: '/my-link',
+            			success: function (response) {
+                			console.log(response.message);
+                			// You can perform additional actions after getting recipes
+            			},
+           	 			error: function (error) {
+                			console.log('Failed to get recipes');
+            			}
+        			});
+    			}
+			// Function to fetch and update the recipe list
+				function updateRecipeList() {
 					$.ajax({
-						type: 'POST',
-						url: '/my-link',
+						url: '/get_recipes',  // Replace with your actual endpoint
+						type: 'GET',
 						success: function (data) {
+							// Clear existing list
 							$('#recipeList').empty();
+
+							// Append each recipe to the list
 							data.recipes.forEach(function (recipe) {
-								$('#recipeList').append('<li><a href="' + recipe.url + '">' + recipe.label + '</a></li>');
+								$('#recipeList').append('<li>' + recipe + '</li>');
 							});
 						},
 						error: function (error) {
@@ -132,40 +157,7 @@
 					});
 				}
 
-				// Attach the submit event to the form
-            	$('#ingredientForm').submit(function (event) {
-                event.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: '/',
-                    data: $('#ingredientForm').serialize(),
-                    success: function (response) {
-                        console.log(response.message);
-                        updateIngredientList();
-                    },
-                    error: function (error) {
-                        console.log('Failed to add ingredient');
-                    }
-                });
-            });
-
-            // Attach the click event to the button
-            $('#findRecipes').click(function (event) {
-                event.preventDefault();
-                // Make an asynchronous request to the '/my-link' endpoint
-                $.ajax({
-                    type: 'POST',
-                    url: '/my-link',
-                    success: function (data) {
-                        updateRecipeList(data.recipes);
-                    },
-                    error: function (error) {
-                        console.log('Failed to fetch recipe list');
-                    }
-                });
-            });
 			</script>
--->
 
 	</section>
 
