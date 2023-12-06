@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 ingredients = []
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         ingredient = request.form["ingredient"]
