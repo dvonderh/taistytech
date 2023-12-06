@@ -21,7 +21,7 @@ def get_ingredients():
     if ingredients != []:
         return jsonify({'ingredients': ingredients})
 
-@app.route("/find_recipes", methods=["GET"])
+@app.route("/find_recipes", methods=["POST"])
 def find_recipes():
     # Call the search_recipes function with the current ingredients
     recipes = search_recipes(ingredients)
