@@ -1,9 +1,9 @@
 import requests
 
-def search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient):
+def search_recipes(ingredient):
     base_url = "https://api.edamam.com/search"
     app_id = "b6d12021"  # Replace with your Edamam App ID
-    app_key = api_key  # Replace with your Edamam App Key
+    app_key = "542b9e7cb7215cf3ac84b705d721b9de"  # Replace with your Edamam App Key
 
     # Define the parameters for the API request
     params = {
@@ -22,3 +22,8 @@ def search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient):
         return recipes
     else:
         return None
+
+ingredient = "chicken"
+recipes = search_recipes(ingredient)
+
+print(recipes)
