@@ -65,4 +65,18 @@
         <h1>TaistyTech</h1>
         <p>Your AI Kitchen Assistant</p>
     </header>
+	<section>
+        <h2>Add an ingredient!</h2>
+        	<form action="/" method="POST">
+            	Enter an ingredient to add it to your kitchen: <input type="text" name="ingredient">
+                <input type="submit" value="Submit">
+            </form>
+            <form id="findrecipes">
+            	<input type="submit" onclick="findRecipes()" value="Find Recipes!">
+        	</form>
+
+            <h3>Ingredient List:</h3>
+            	<ul id="ingredientList"></ul>
+	</section>
+
 </body>
