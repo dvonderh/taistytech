@@ -23,7 +23,7 @@ def get_ingredients():
 
 @app.route("/find_recipes", methods=["GET"])
 def find_recipes():
-    # Call the search_recipes function with the current ingredients
+    # Call the search_recipes function with the current ingredient
     recipes = search_recipes(ingredients)
     return jsonify({'recipes': recipes})
 
