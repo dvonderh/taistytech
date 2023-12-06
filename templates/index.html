@@ -74,9 +74,7 @@
 
             <h3>Ingredient List:</h3>
             	<ul id="ingredientList"></ul>
-<!--			<h3>Recipe List:</h3>
-        		<ul id="recipeList"></ul>
--->
+	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
     	// Function to fetch and update the ingredient list
@@ -119,11 +117,30 @@
 	</script>
 	</section>
 	<section>
-    <form id="findrecipes">
-    	<input type="submit" onclick="findRecipes()" value="Find Recipes!">
-    </form>
-	<h3>Recipe List:</h3>
-    	<ul id="recipeList"></ul>
-
+    	<form id="findrecipes">
+    		<input type="submit" onclick="findRecipes()" value="Find Recipes!">
+    	</form>
+		<h3>Recipe List:</h3>
+    		<ul id="recipeList"></ul>
+		<!-- EVERYTHING ABOVE HERE WORKS -->
+		<script>
+			function findRecipes() {
+				$.ajax({
+					url: '/find_recipes',  // Endpoint to handle recipe search
+					type: 'GET',
+					success: function (data) {
+						// Clear existing list
+						$('#recipeList').empty();
+						// Append each recipe to the list
+						data.recipes.forEach(function (recipe) {
+							$('#recipeList').append('<li>' + recipe.label + ' - <a href="' + recipe.url + '">Link</a></li>');
+						});
+					},
+					error: function (error) {
+						console.log('Failed to get recipes');
+					}
+				});
+			}
+		</script>	
 	</section>
 </body>
