@@ -73,7 +73,12 @@
 			<input type="submit" value="Submit">
 		</form>
 
-		<button id="addButton" >Add Item</button>
+		<form action="/my-link/">
+            <input type="submit" value="Click me" />
+        </form>
+        
+        <button> <a href="/my-link/">Click me</a></button>
+
 
 
 		<h3>Ingredient List:</h3>
@@ -125,28 +130,6 @@
         		});
 
 
-				// Function to add an item using a button click
-				function addItem() {
-					// Make an asynchronous request to the '/add' endpoint
-					$.ajax({
-						type: 'POST',
-						url: '/add',
-						success: function (response) {
-							console.log(response.message);
-							// You can perform additional actions after the item is added
-						},
-						error: function (error) {
-							console.log('Failed to add item');
-						}
-					});
-				}
-
-				// Attach the addItem function to the button click event
-				$(document).ready(function () {
-					$('#addButton').click(function () {
-						addItem();
-					});
-				});
 			</script>
 			
 	</section>
