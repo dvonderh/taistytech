@@ -67,10 +67,11 @@
     </header>
 	<section>
         <h2>Add an ingredient!</h2>
-        	<form action="/" method="POST">
+        	<form id="ingredientForm" action="/" method="POST">
             	Enter an ingredient to add it to your kitchen: <input type="text" name="ingredient">
                 <input type="submit" value="Submit">
             </form>
+
             <form id="findrecipes">
             	<input type="submit" onclick="findRecipes()" value="Find Recipes!">
         	</form>
@@ -101,7 +102,9 @@
                 }
             });
         }
+
 		updateIngredientList();
+
 		$('#ingredientForm').submit(function (event) {
         	event.preventDefault(); // Prevent default form submission
 			$.ajax({

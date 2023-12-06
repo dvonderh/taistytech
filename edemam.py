@@ -44,7 +44,7 @@ def search_recipes(ingredients):
     else:
         return None
 
-ingredient = ["chicken", "salt", "butter"]
+ingredient = ["chicken", "broccoli", "milk"]
 recipes = search_recipes(ingredient)
 for i in recipes:
     print(i)
