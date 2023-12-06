@@ -21,7 +21,7 @@ def get_ingredients():
     if ingredients != []:
         return jsonify({'ingredients': ingredients})
 
-@app.route('/my-link', methods=["POST"])
+@app.route('/my-link', methods=["GET"])
 def my_link():
     for i in ingredients:
         #recipe = search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient)
