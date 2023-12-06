@@ -22,7 +22,7 @@ def get_ingredients():
         return jsonify({'ingredients': ingredients})
 
 @app.route('/my-link', methods=["POST"])
-def my_link():
+def findRecipes():
     for i in ingredients:
         #recipe = search_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredient)
         pass
