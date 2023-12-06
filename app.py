@@ -1,6 +1,5 @@
 # app.py
-from flask import Flask, render_template, request
-import mysql.connector
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -15,6 +14,10 @@ def home():
  
     return render_template("index.html", ingredient_list=ingredients)
 
+
+@app.route("/get_ingredients", methods=["GET"])
+def get_ingredients():
+    return jsonify({'ingredients': ingredients})
 
 if __name__ == "__main__":
     app.run(debug=True)
