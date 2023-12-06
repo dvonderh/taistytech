@@ -1,6 +1,5 @@
 # app.py
 from flask import Flask, render_template, request, jsonify
-from edemam import search_recipes
 
 app = Flask(__name__)
 
