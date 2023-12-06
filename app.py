@@ -1,5 +1,6 @@
 # app.py
 from flask import Flask, render_template, request, jsonify
+from edemam import *
 
 app = Flask(__name__)
 
@@ -17,7 +18,14 @@ def home():
 
 @app.route("/get_ingredients", methods=["GET"])
 def get_ingredients():
-    return jsonify({'ingredients': ingredients})
+    if ingredients != []:
+        return jsonify({'ingredients': ingredients})
+
+@app.route("/add", methods=["POST"])
+def add():
+    for i in ingredients:
+        r = get_recipes(api_key="542b9e7cb7215cf3ac84b705d721b9de", ingredients)
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
