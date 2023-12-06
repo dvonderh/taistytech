@@ -22,7 +22,6 @@ def get_ingredients():
     if ingredients != []:
         return jsonify({'ingredients': ingredients})
 
-'''
 @app.route('/my-link', methods=["POST"])
 def findRecipes():
     recipe = search_recipes(ingredients)
@@ -30,9 +29,8 @@ def findRecipes():
     for i in recipe:
         out.append(i['label'])
         out.append(i['url'])
-    return jsonify({'recipes': out})
-'''
-    
+    return render_template("index.html", recipes=out)
+ 
 
 if __name__ == "__main__":
     app.run(debug=True)

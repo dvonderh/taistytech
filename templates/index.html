@@ -144,9 +144,16 @@
 						success: function (data) {
 							// Clear existing list
 							$('#recipeList').empty();
+							// Append each recipe to the list
+							data.recipes.forEach(function (recipe) {
+								$('#recipeList').append('<li>' + recipe + '</li>');
+							});
+						},
+						error: function (error) {
+							console.log('Failed to fetch recipe list');
+						}
 					});
 				}
-
 			</script>
 
 	</section>
