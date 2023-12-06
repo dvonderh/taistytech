@@ -123,24 +123,5 @@
 		<h3>Recipe List:</h3>
     		<ul id="recipeList"></ul>
 		<!-- EVERYTHING ABOVE HERE WORKS -->
-<!--		<script>
-			function findRecipes() {
-				$.ajax({
-					url: '/find_recipes',  // Endpoint to handle recipe search
-					type: 'GET',
-					success: function (data) {
-						// Clear existing list
-						$('#recipeList').empty();
-						// Append each recipe to the list
-						data.recipes.forEach(function (recipe) {
-							$('#recipeList').append('<li>' + recipe.label + ' - <a href="' + recipe.url + '">Link</a></li>');
-						});
-					},
-					error: function (error) {
-						console.log('Failed to get recipes');
-					}
-				});
-			}
-		</script>	-->
 	</section>
 </body>
