@@ -72,15 +72,22 @@
 			Enter an ingredient to add it to your kitchen: <input type="text" name="ingredient">
 			<input type="submit" value="Submit">
 		</form>
-
+	<!--
 		<form id="findrecipes">
             <input type="submit" onclick="findRecipes()" value="Find Recipes!">
         </form>
+	-->
+		<button id="findRecipes">Find Recipes!</button>
 
 		<h3>Ingredient List:</h3>
 			<ul id="ingredientList">
 				<!-- Ingredients will be dynamically added here -->
 			</ul>
+		<h3>Recipe List:</h3>
+        <ul id="recipeList">
+            <!-- Recipes will be dynamically added here -->
+        </ul>
+</section>
 
 
 			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -123,25 +130,11 @@
             		});
         		});
 
-				function findRecipes() {
-        		// Make an asynchronous request to the '/my-link' endpoint
-        			$.ajax({
-            			type: 'POST',
-            			url: '/my-link',
-            			success: function (response) {
-                			console.log(response.message);
-                			// You can perform additional actions after getting recipes
-            			},
-           	 			error: function (error) {
-                			console.log('Failed to get recipes');
-            			}
-        			});
-    			}
 			// Function to fetch and update the recipe list
 				function updateRecipeList() {
 					$.ajax({
-						url: '/get_recipes',  // Replace with your actual endpoint
-						type: 'GET',
+						url: '/my-link',  // Replace with your actual endpoint
+						type: 'POST',
 						success: function (data) {
 							// Clear existing list
 							$('#recipeList').empty();
@@ -156,10 +149,13 @@
 						}
 					});
 				}
+				$('#findRecipes').click(function (event) {
+            event.preventDefault();
+            updateRecipeList();
+        });
 
 			</script>
 
-	</section>
 
 </body>
 
