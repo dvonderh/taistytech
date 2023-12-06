@@ -16,7 +16,7 @@ def home():
  
     return render_template("index.html", ingredient_list=ingredients)
 
-
+'''
 @app.route("/get_ingredients", methods=["GET"])
 def get_ingredients():
     if ingredients != []:
@@ -31,7 +31,7 @@ def findRecipes():
         out.append(i['url'])
     #return jsonify({'recipes': out})
     return render_template("index.html", recipes=out)
- 
+ '''
 
 if __name__ == "__main__":
     app.run(debug=True)

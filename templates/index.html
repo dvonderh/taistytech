@@ -84,74 +84,8 @@
         <ul id="recipeList">
             <!-- Recipes will be dynamically added here -->
         </ul>
-</section>
+	</section>
 
-
-			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-			<script>
-				// Function to fetch and update the ingredient list
-				function updateIngredientList() {
-					$.ajax({
-						url: '/get_ingredients',  // Replace with your actual endpoint
-						type: 'GET',
-						success: function (data) {
-							// Clear existing list
-							$('#ingredientList').empty();
-
-							// Append each ingredient to the list
-							data.ingredients.forEach(function (ingredient) {
-								$('#ingredientList').append('<li>' + ingredient + '</li>');
-							});
-						},
-						error: function (error) {
-							console.log('Failed to fetch ingredient list');
-						}
-					});
-				}
-
-				updateIngredientList();
-				$('#ingredientForm').submit(function (event) {
-            		event.preventDefault(); // Prevent default form submission
-				$.ajax({
-                		type: 'POST',
-                		url: '/',
-                		data: $('#ingredientForm').serialize(),
-                		success: function (response) {
-                    		console.log(response.message);
-                    // Update the ingredient list after successful submission
-                    		updateIngredientList();
-                		},
-                		error: function (error) {
-                    		console.log('Failed to add ingredient');
-                		}
-            		});
-        		});
-
-			// Function to fetch and update the recipe list
-				function updateRecipeList() {
-					$.ajax({
-						url: '/my-link',  // Replace with your actual endpoint
-						type: 'POST',
-						success: function (data) {
-							// Clear existing list
-							$('#recipeList').empty();
-
-							// Append each recipe to the list
-							data.recipes.forEach(function (recipe) {
-								$('#recipeList').append('<li>' + recipe + '</li>');
-							});
-						},
-						error: function (error) {
-							console.log('Failed to fetch recipe list');
-						}
-					});
-				}
-				$('#findRecipes').click(function (event) {
-            event.preventDefault();
-            updateRecipeList();
-        });
-
-			</script>
 
 
 </body>
