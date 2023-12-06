@@ -24,21 +24,14 @@ def get_ingredients():
 
 @app.route('/my-link', methods=["POST"])
 def findRecipes():
-    count = defaultdict(int)
-    for i in ingredients:
-        recipe = search_recipes(i)
-        for j in recipe:
-            count[j['recipe']['label']] += 1
+    recipe = search_recipes(ingredients)
+    out = []
+    for i in recipe:
+        out.append(i['label'])
+        out.append(i['url'])
+    return render_template("index.html", recipes=out)
 
-    final = []
-    for i in count:
-        if count[i] == len(ingredients):
-            final.append(i)
-
-    for i in final:
-        recipe = search_recipes(i) 
-
-
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
