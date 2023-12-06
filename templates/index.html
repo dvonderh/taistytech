@@ -102,6 +102,24 @@
 
 				// Initial update on page load
 				updateIngredientList();
+				$('#ingredientForm').submit(function (event) {
+            		event.preventDefault(); // Prevent default form submission
+
+            // Make an asynchronous request to add the ingredient
+            		$.ajax({
+                		type: 'POST',
+                		url: '/',
+                		data: $('#ingredientForm').serialize(),
+                		success: function (response) {
+                    		console.log(response.message);
+                    // Update the ingredient list after successful submission
+                    		updateIngredientList();
+                		},
+                		error: function (error) {
+                    		console.log('Failed to add ingredient');
+                		}
+            		});
+        		});
 
 			</script>
 
