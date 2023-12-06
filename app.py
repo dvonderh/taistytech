@@ -29,7 +29,7 @@ def findRecipes():
     for i in recipe:
         out.append(i['label'])
         out.append(i['url'])
-    return jsonify({'recipes': out})
+    #return jsonify({'recipes': out})
     
 
 if __name__ == "__main__":
