@@ -1,7 +1,6 @@
 # app.py
 from flask import Flask, render_template, request, jsonify
-from edemam import *
-from collections import defaultdict
+#from edemam import *
 
 app = Flask(__name__)
 
@@ -11,10 +10,10 @@ ingredients = []
 def home():
     if request.method == "POST":
         ingredient = request.form["ingredient"]
-        if ingredient not in ingredients and ingredient != '':
-            ingredients.append(ingredient)
+        #if ingredient not in ingredients and ingredient != '':
+            #ingredients.append(ingredient)
  
-    return render_template("index.html", ingredient_list=ingredients)
+    #return render_template("index.html", ingredient_list=ingredients)
 
 '''
 @app.route("/get_ingredients", methods=["GET"])
