@@ -122,13 +122,6 @@
     	</form>
 		<h3>Recipe List:</h3>
     		<ul id="recipeList">
-				{% if recipes %}
-                {% for recipe in recipes %}
-                    <li>{{ recipe.label }} - <a href="{{ recipe.url }}">Link</a></li>
-                {% endfor %}
-            {% else %}
-                <li>No recipes found</li>
-            {% endif %}
 			</ul>
 
 	</section>
