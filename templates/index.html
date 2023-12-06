@@ -126,6 +126,35 @@
         		});
 
 			</script>
+
+			<h4>Recipes:</h4>
+			<ul id="recipeList">
+				<!-- Recipes will be dynamically added here -->
+			</ul>
+
+			<script>
+				function updateRecipeList() {
+					$.ajax({
+						url: '/my-link',
+						type: 'POST',
+						success: function (data) {
+							$('#recipeList').empty();
+							data.recipes.forEach(function (recipe) {
+								$('#recipeList').append('<li><a href="' + recipe.url + '">' + recipe.label + '</a></li>');
+							});
+						},
+						error: function (error) {
+							console.log('Failed to fetch recipe list');
+						}
+					});
+				}
+
+				// Attach the updateRecipeList function to the button click event
+				$('#findrecipes').submit(function (event) {
+					event.preventDefault();
+					updateRecipeList();
+				});
+			</script>
 			
 	</section>
 
