@@ -1,6 +1,7 @@
 # app.py
 from flask import Flask, render_template, request, jsonify
 from edemam import *
+from collections import defaultdict
 
 app = Flask(__name__)
 
@@ -23,8 +24,22 @@ def get_ingredients():
 
 @app.route('/my-link', methods=["POST"])
 def findRecipes():
+    count = defaultdict(int)
     for i in ingredients:
         recipe = search_recipes(i)
+        for j in recipe:
+            count[j['recipe']['label']] += 1
+
+    final = []
+    for i in count:
+        if count[i] == len(ingredients):
+            final.append(i)
+
+    for i in final:
+        recipe = search_recipes(i) 
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

@@ -25,5 +25,6 @@ def search_recipes(ingredient):
 
 ingredient = "chicken"
 recipes = search_recipes(ingredient)
+for i in recipes:
+    print(i['recipe']['label'])
 
-print(recipes)
