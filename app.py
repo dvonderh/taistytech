@@ -29,7 +29,8 @@ def findRecipes():
     for i in recipe:
         out.append(i['label'])
         out.append(i['url'])
-    return render_template("index.html", recipes=out)
+    return jsonify({'recipes': out})
+    #return render_template("index.html", recipes=out)
  
 
 if __name__ == "__main__":
