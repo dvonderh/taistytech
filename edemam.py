@@ -47,5 +47,6 @@ def search_recipes(ingredients):
 ingredient = ["chicken", "broccoli", "milk"]
 recipes = search_recipes(ingredient)
 for i in recipes:
-    print(i)
+    print(i['label'])
+    print(i['url'])
 
