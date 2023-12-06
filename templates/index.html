@@ -71,8 +71,10 @@
 		<form action="/" method="POST">
 			Enter an ingredient to add it to your kitchen: <input type="text" name="ingredient">
 			<input type="submit" value="Submit">
+			<button type="button" onclick="get_recipes()">Get Possible Recipes</button>
+
 		</form>
-		<button type="button" onclick="getPossibleRecipes()">Get Possible Recipes</button>
+
 
 		<h3>Ingredient List:</h3>
 			<ul id="ingredientList">
