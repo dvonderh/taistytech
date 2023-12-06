@@ -23,7 +23,7 @@ def get_ingredients():
 @app.route("/get_recipies", methods=["GET", "POST"])
 def get_recipes():
     if request.method == "POST":
-        recipes = request.form["recipe"]
+        recipes = request.form.get("recipe")
         for i in ingredients:
             recipes = search_recipes(i)
     
