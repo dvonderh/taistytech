@@ -73,12 +73,9 @@
 			<input type="submit" value="Submit">
 		</form>
 
-	<!--
 		<form id="findrecipes">
             <input type="submit" onclick="findRecipes()" value="Find Recipes!">
         </form>
-	-->
-		<button id="findRecipes">Find Recipes!</button>
 
 		<h3>Ingredient List:</h3>
 			<ul id="ingredientList">
@@ -109,7 +106,6 @@
 
 				updateIngredientList();
 
-			/*
 				$('#findrecipes').submit(function (event) {
       				event.preventDefault();
       				findRecipes();
@@ -132,7 +128,6 @@
 					});
 				}
 
-				*/
 				// Attach the submit event to the form
             	$('#ingredientForm').submit(function (event) {
                 event.preventDefault();
